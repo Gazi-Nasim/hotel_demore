@@ -28,7 +28,7 @@ $usr = Auth::guard('web')->user();
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                {{--@if ($usr->can('dashboard.view'))--}}
+                @if ($usr->can('dashboard.view'))
                 <li class="nav-item {{ Route::is('general.index') || Route::is('general.create') || Route::is('general.edit')  ? 'menu-open' : null }} ">
                     <a href="#" class="nav-link {{ Route::is('general.index') || Route::is('general.create') || Route::is('general.edit')  ? 'active' : null }} ">
                         <!-- <i class="nav-icon fas fa-solid fa-user"></i> -->
@@ -77,36 +77,36 @@ $usr = Auth::guard('web')->user();
                     </li>
                 </ul>
             </li>
-            {{--@endif--}}
-            {{--@if ($usr->can('role.create') || $usr->can('role.view') || $usr->can('role.edit') || $usr->can('role.delete'))
+            @endif
+            @if ($usr->can('role.create') || $usr->can('role.view') || $usr->can('role.edit') || $usr->can('role.delete'))
             <li class="nav-item {{ Route::is('role.index') || Route::is('role.create') || Route::is('role.edit')  ? 'menu-open' : null }} ">
-                <a href="#" class="nav-link {{ Route::is('role.index') || Route::is('role.create') || Route::is('role.edit')  ? 'active' : null }}">
-                    <i class="nav-icon fas fa-users mr-2"></i>
-                    <p>
-                        Roles & Permissions
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    @if ($usr->can('role.create'))
-                    <li class="nav-item">
-                        <a href="{{route('role.create')}}" class="nav-link {{ Route::is('role.create') ? 'active' : 'null' }}">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Add</p>
-                        </a>
-                    </li>
-                    @endif
-                    @if ($usr->can('role.view'))
-                    <li class="nav-item">
-                        <a href="{{route('role.index')}}" class="nav-link {{ Route::is('role.index') || Route::is('role.edit') ? 'active' : null }} ">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>All Roles</p>
-                        </a>
-                    </li>
-                    @endif
-                </ul>
+            <a href="#" class="nav-link {{ Route::is('role.index') || Route::is('role.create') || Route::is('role.edit')  ? 'active' : null }}">
+                <i class="nav-icon fas fa-users mr-2"></i>
+                <p>
+                    Roles & Permissions
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                @if ($usr->can('role.create'))
+                <li class="nav-item">
+                    <a href="{{route('role.create')}}" class="nav-link {{ Route::is('role.create') ? 'active' : 'null' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Add</p>
+                    </a>
+                </li>
+                @endif
+                @if ($usr->can('role.view'))
+                <li class="nav-item">
+                    <a href="{{route('role.index')}}" class="nav-link {{ Route::is('role.index') || Route::is('role.edit') ? 'active' : null }} ">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>All Roles</p>
+                    </a>
+                </li>
+                @endif
+            </ul>
             </li>
-            @endif--}}
+            @endif
             <li class="nav-item {{ Route::is('branch.index') || Route::is('branch.create') || Route::is('branch.edit')  ? 'menu-open' : null }} ">
                 <a href="#" class="nav-link {{ Route::is('branch.index') || Route::is('branch.create') || Route::is('branch.edit')  ? 'active' : null }} ">
                     <!-- <i class="nav-icon fas fa-solid fa-user"></i> -->
@@ -144,17 +144,17 @@ $usr = Auth::guard('web')->user();
                 <ul class="nav nav-treeview">
                     {{--<li class="nav-item">
                         <a href="{{route('branch_message.create')}}" class="nav-link {{ Route::is('branch_message.create') ? 'active' : 'null' }} ">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Add</p>
-                        </a>
-                    </li>--}}
-                    <li class="nav-item ">
-                        <a href="{{route('branch_message.index')}}" class="nav-link {{ Route::is('branch_message.index') ? 'active' : 'null' }} ">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Message List</p>
-                        </a>
-                    </li>
-                </ul>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add</p>
+                    </a>
+            </li>--}}
+            <li class="nav-item ">
+                <a href="{{route('branch_message.index')}}" class="nav-link {{ Route::is('branch_message.index') ? 'active' : 'null' }} ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Message List</p>
+                </a>
+            </li>
+            </ul>
             </li>
 
             <li class="nav-item {{ Route::is('branchslider.index') || Route::is('branchslider.create') || Route::is('branchslider.edit')  ? 'menu-open' : null }} ">
